@@ -1,107 +1,110 @@
 <div align="center">
 
-# Luka Homepage
+# Academic Homepage Template
 
-### A warm, minimal, responsive homepage template for researchers, students, builders, and creators.
+### A static academic homepage template with a personal profile, publication section, and Markdown-based writing page.
 
-[中文说明](README.zh-CN.md) · [Live Demo](https://wzsyyh.github.io/luka-homepage-template/) · [Use This Template](https://github.com/wzsyyh/luka-homepage-template/generate)
+[中文说明](README.zh-CN.md) · [Live Demo](https://fanxyjumping.github.io/Xiaoyuf-homepage-template/) · [Use This Template](https://github.com/Fanxyjumping/Xiaoyuf-homepage-template/generate)
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-c2714f?style=flat-square)](https://wzsyyh.github.io/luka-homepage-template/)
-[![Template Ready](https://img.shields.io/badge/Template-Ready-3d3929?style=flat-square)](https://github.com/wzsyyh/luka-homepage-template/generate)
-[![Stack](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20JS-e28a67?style=flat-square)](https://github.com/wzsyyh/luka-homepage-template)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-c2714f?style=flat-square)](https://fanxyjumping.github.io/Xiaoyuf-homepage-template/)
+[![Template Ready](https://img.shields.io/badge/Template-Ready-3d3929?style=flat-square)](https://github.com/Fanxyjumping/Xiaoyuf-homepage-template/generate)
+[![Stack](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20Python-e28a67?style=flat-square)](https://github.com/Fanxyjumping/Xiaoyuf-homepage-template)
 [![License](https://img.shields.io/badge/License-MIT-8c8577?style=flat-square)](./LICENSE.md)
 
 </div>
 
-`Luka Homepage` is a standalone template version extracted from my own personal homepage. It is designed to feel warm, clean, and academic without adding any build tooling or framework overhead.
+`Academic Homepage Template` is a static personal academic homepage template with a two-page structure:
 
-## Why This Template
+- `Main`: profile, education, experience, news, publications, and projects.
+- `Writing`: a lightweight Markdown-based blog with year navigation.
 
-- Minimal but not plain: clean typography, warm colors, and balanced spacing.
-- Academic-ready layout: built for homepage content, not generic portfolio blocks.
-- Static by default: deploy directly to GitHub Pages with zero build steps.
-- Easy to fork: replace a few text blocks and assets, then publish.
-- Mobile-friendly: desktop and phone layouts are already tuned.
+The template is plain HTML, CSS, and Python scripts. It does not require a frontend framework.
 
-## What You Get
+## Preview Locally
 
-| Section | Included |
-| --- | --- |
-| Personal intro | `About Me`, avatar, email, social links |
-| Academic timeline | `Education`, `Experience` |
-| Showcase | `Projects`, `Publications`, `Awards` |
-| UX details | Dark mode toggle, smooth entrance animation, responsive layout |
-| Replaceable assets | Avatar, institution logo, favicon, CV link |
+```bash
+python3 scripts/serve.py
+```
 
-## Quick Start
+Then open:
 
-### 1. Create your own copy
+```text
+http://localhost:8000/
+```
 
-Use GitHub's [Use This Template](https://github.com/wzsyyh/luka-homepage-template/generate) button, or copy this folder into a new repository.
+## Customize
 
-Suggested repository names:
+Edit these files first:
 
-- `luka-homepage`
-- `luka-homepage-template`
-- `luka-academic-homepage`
+- `index.html`: main homepage content.
+- `assets/css/theme-luka.css`: colors, layout, and typography.
+- `assets/img/profile.svg`: profile image placeholder.
+- `assets/img/institution.svg`: institution logo placeholder.
+- `assets/cv/CV.pdf`: your CV file, if you want to provide one.
 
-### 2. Customize the content
+## Writing Workflow
 
-You will mainly edit:
+Write posts as Markdown files under:
 
-- `index.html` for all main content
-- `assets/css/theme-luka.css` for colors, spacing, and layout
-- `assets/img/avatar.svg` for the profile image
-- `assets/img/institution.svg` for school or lab branding
+```text
+posts/<year>/<slug>.md
+```
 
-### 3. Replace your assets
+Each post needs front matter:
 
-- Avatar: replace `assets/img/avatar.svg` with your own `png`, `jpg`, or `svg`
-- Institution logo: replace `assets/img/institution.svg`
-- Favicon: replace `assets/img/favicon.svg`
-- Resume: update the `Download my CV` link in `index.html`
+```md
+---
+title: Example Post Title
+date: 2026-02-01
+summary: A short summary for the writing index.
+slug: example-post
+---
+```
 
-### 4. Deploy to GitHub Pages
+The full date is used for sorting. Pages display dates as `Feb 2026`.
 
-1. Open repository `Settings`
-2. Go to `Pages`
-3. Choose `Deploy from a branch`
-4. Select `main` and `/ (root)`
-5. Save and wait for deployment
+Build writing pages:
 
-## Project Structure
+```bash
+python3 scripts/build_posts.py
+```
+
+Or watch and rebuild automatically:
+
+```bash
+python3 scripts/watch_posts.py
+```
+
+## Structure
 
 ```text
 .
 ├── index.html
-├── README.md
-├── README.zh-CN.md
+├── writing/
+├── posts/
+├── scripts/
+├── assets/
+│   ├── css/
+│   ├── cv/
+│   ├── img/
+│   └── js/
 ├── LICENSE.md
-└── assets
-    ├── css
-    │   ├── font_sans_serif.css
-    │   └── theme-luka.css
-    ├── cv
-    ├── img
-    └── js
-        └── scale.fix.js
+├── NOTICE.md
+└── README.md
 ```
-
-## Design Notes
-
-- The left sidebar stays top-aligned, matching the original personal homepage layout.
-- The visual language is intentionally warm and understated rather than highly decorative.
-- The template keeps just enough structure for academic use while remaining easy to personalize.
 
 ## Attribution
 
-The footer includes two lines by default:
+This template is adapted from:
 
-1. Your own site copyright
-2. `Luka Homepage Template by Yuheng Yang`
+- Luka Homepage Template: https://github.com/wzsyyh/luka-homepage-template
 
-If you want to preserve template attribution, keep the second line.
+The writing page organization is inspired by:
+
+- Nicholas Carlini's writing page: https://nicholas.carlini.com/writing/
+
+See `NOTICE.md` for details.
 
 ## License
 
-This template includes its own `LICENSE.md`, so you can publish it as an independent repository immediately.
+Released under the MIT License. The upstream MIT notice is preserved in `LICENSE.md`.
