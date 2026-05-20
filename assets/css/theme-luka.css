@@ -227,6 +227,13 @@ body.theme-luka .visitor-card-body {
   line-height: 1.55;
 }
 
+body.theme-luka .visitor-card-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+
 body.theme-luka .content {
   grid-column: 2;
   min-width: 0;
