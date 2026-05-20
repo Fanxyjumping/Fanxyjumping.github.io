@@ -293,6 +293,7 @@ def page_template(title: str, description: str, body: str, depth: int) -> str:
 
 
 def render_post(post: Post) -> str:
+    footer = render_footer(depth=2)
     body = f"""  <div class="wrapper writing-layout">
     <main class="boxed">
       <article>
@@ -312,11 +313,20 @@ def render_post(post: Post) -> str:
       </article>
     </main>
 
-    <footer class="site-footer">
-      <p>&copy; 2026 {AUTHOR}. All rights reserved.</p>
-    </footer>
+{footer}
   </div>"""
     return page_template(post.title, post.summary, body, depth=2)
+
+
+def render_footer(depth: int) -> str:
+    prefix = "../" * depth
+    return f"""    <footer class="site-footer">
+      <p>
+        &copy; 2026 {AUTHOR}. All rights reserved.
+        <br>
+        <span class="template-credit"><a href="https://github.com/Fanxyjumping/Xiaoyuf-homepage-template">Xiaoyuf Homepage Template</a> by <a href="{prefix}index.html">Xiaoyu Fan</a></span>
+      </p>
+    </footer>"""
 
 
 def render_index(posts: list[Post]) -> str:
@@ -345,6 +355,7 @@ def render_index(posts: list[Post]) -> str:
         </section>"""
         )
 
+    footer = render_footer(depth=1)
     body = f"""  <div class="wrapper writing-layout">
     <div class="writing-grid">
       <aside class="year-sidebar boxed">
@@ -365,9 +376,7 @@ def render_index(posts: list[Post]) -> str:
       </main>
     </div>
 
-    <footer class="site-footer">
-      <p>&copy; 2026 {AUTHOR}. All rights reserved.</p>
-    </footer>
+{footer}
   </div>"""
     return page_template("Writing", f"Writing by {AUTHOR}.", body, depth=1)
 
