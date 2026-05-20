@@ -207,11 +207,11 @@ body.theme-luka .social-icons a {
 
 body.theme-luka .visitor-card {
   margin: 1.25em auto 0;
-  padding: 0.8em;
+  padding: 0.45em;
   border: 1px dashed var(--border);
   border-radius: 4px;
   color: var(--muted);
-  text-align: left;
+  text-align: center;
 }
 
 body.theme-luka .visitor-card-title {
@@ -224,7 +224,7 @@ body.theme-luka .visitor-card-title {
 
 body.theme-luka .visitor-card-body {
   font-size: 0.85em;
-  line-height: 1.55;
+  line-height: 1;
 }
 
 body.theme-luka .visitor-card-body img {
