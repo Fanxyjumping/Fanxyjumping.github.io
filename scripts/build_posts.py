@@ -268,7 +268,7 @@ def page_template(title: str, description: str, body: str, depth: int) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)} - {AUTHOR}</title>
   <meta name="description" content="{html.escape(description)}">
-  <link rel="icon" href="{prefix}assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{prefix}assets/img/favicon.jpg" type="image/jpeg">
 
   <link rel="stylesheet" href="{prefix}assets/css/font_sans_serif.css">
   <link rel="stylesheet" href="{prefix}assets/css/theme-luka.css">
