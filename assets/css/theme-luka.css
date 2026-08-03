@@ -405,6 +405,15 @@ body.theme-luka .publication-preview {
   padding: 1em;
 }
 
+body.theme-luka .publication-preview-image {
+  min-height: 0;
+  aspect-ratio: 3785 / 1677;
+  padding: 0;
+  overflow: hidden;
+  border-style: solid;
+  background: #fff;
+}
+
 body.theme-luka .publication-preview img {
   width: 100%;
   height: 100%;
