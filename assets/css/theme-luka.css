@@ -405,15 +405,12 @@ body.theme-luka .publication-preview {
   padding: 1em;
 }
 
-body.theme-luka img.publication-preview {
+body.theme-luka .publication-preview img {
   width: 100%;
-  height: auto;
-  min-height: 0;
-  aspect-ratio: auto;
+  height: 100%;
+  max-width: 100%;
   display: block;
-  padding: 0;
-  border-style: solid;
-  background: #fff;
+  object-fit: contain;
 }
 
 body.theme-luka .publication-info h3 {
