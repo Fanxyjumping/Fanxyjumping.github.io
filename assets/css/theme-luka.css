@@ -459,8 +459,9 @@ body.theme-luka .abstract-button:hover {
 body.theme-luka .publication-abstract {
   margin-top: 0.85em;
   color: var(--text);
+  font-size: 0.9em;
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.55;
 }
 
 body.theme-luka .writing-layout {
