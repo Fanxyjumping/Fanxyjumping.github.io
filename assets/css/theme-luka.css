@@ -371,6 +371,33 @@ body.theme-luka .project-card + .project-card {
   margin-top: 1.1em;
 }
 
+body.theme-luka .honors-list {
+  margin: 0;
+  padding-left: 1.35em;
+  color: var(--text);
+  font-size: 1.05em;
+  font-weight: 400;
+}
+
+body.theme-luka .honors-list li {
+  margin-bottom: 0.45em;
+  padding-bottom: 0;
+}
+
+body.theme-luka .honor-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1em;
+}
+
+body.theme-luka .honor-year {
+  color: var(--text);
+  font-style: italic;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 body.theme-luka .news-list {
   margin: 0;
   padding-left: 1.35em;
@@ -660,6 +687,15 @@ body.theme-luka strong {
   body.theme-luka .publication-card {
     grid-template-columns: 1fr;
     gap: 1em;
+  }
+
+  body.theme-luka .honor-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  body.theme-luka .honor-year {
+    justify-self: end;
   }
 
   body.theme-luka .writing-grid {
