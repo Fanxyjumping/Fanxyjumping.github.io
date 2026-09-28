@@ -30,6 +30,27 @@ body.theme-luka *::after {
   --accent-hover: #c03030;
   --accent-rule: #c44;
   --shadow: rgba(0, 0, 0, 0.08);
+  --opportunity-bg: #f4f1ef;
+  --nav-bg: #ffffff;
+  --preview-bg: #ffffff;
+  --preview-shade: rgba(0, 0, 0, 0.02);
+  --hairline: rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #171717;
+  --panel-bg: #1b1b1b;
+  --soft-bg: #242424;
+  --text: #ffffff;
+  --muted: #b6b6b6;
+  --border: #515151;
+  --light-border: #494949;
+  --opportunity-bg: #282323;
+  --nav-bg: #1b1b1b;
+  --preview-bg: #ffffff;
+  --preview-shade: rgba(255, 255, 255, 0.02);
+  --hairline: rgba(255, 255, 255, 0.25);
 }
 
 body.theme-luka {
@@ -75,7 +96,7 @@ body.theme-luka .top-nav {
   width: 100%;
   min-height: 3.5em;
   padding: 1em 0;
-  background: #ffffff;
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -108,6 +129,44 @@ body.theme-luka .nav-links {
   gap: 0.8em;
   font-size: 120%;
   font-variant: small-caps;
+}
+
+body.theme-luka .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  flex-shrink: 0;
+}
+
+body.theme-luka .theme-toggle {
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.2em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body.theme-luka .theme-toggle:hover {
+  opacity: 0.7;
+}
+
+body.theme-luka .theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+body.theme-luka .theme-sun,
+:root[data-theme="dark"] body.theme-luka .theme-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] body.theme-luka .theme-sun {
+  display: inline;
 }
 
 body.theme-luka .nav-links a {
@@ -187,11 +246,24 @@ body.theme-luka .site-email {
 }
 
 body.theme-luka .social-icons {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   gap: 0.35em;
+}
+
+body.theme-luka .email-copy-status {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-height: 1.2em;
+  color: var(--text);
+  font-size: 0.75em;
+  line-height: 1.2;
+  pointer-events: none;
 }
 
 body.theme-luka .social-icons a {
@@ -264,7 +336,7 @@ body.theme-luka .opportunity-box {
   padding: 0.95em 1.1em;
   border-left: 3px solid rgba(160, 32, 32, 0.55);
   border-radius: 8px;
-  background: #f4f1ef;
+  background: var(--opportunity-bg);
   color: var(--text);
 }
 
@@ -274,7 +346,7 @@ body.theme-luka .opportunity-box strong {
 
 body.theme-luka .research-keyword {
   text-decoration-line: underline;
-  text-decoration-color: #000000;
+  text-decoration-color: var(--text);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.16em;
 }
@@ -425,7 +497,7 @@ body.theme-luka .publication-preview {
   border: 1px dashed var(--border);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(160, 32, 32, 0.06), rgba(0, 0, 0, 0.02)),
+    linear-gradient(135deg, rgba(160, 32, 32, 0.06), var(--preview-shade)),
     var(--soft-bg);
   color: var(--muted);
   text-align: center;
@@ -438,7 +510,7 @@ body.theme-luka .publication-preview-image {
   padding: 0;
   overflow: hidden;
   border-style: solid;
-  background: #fff;
+  background: var(--preview-bg);
 }
 
 body.theme-luka .publication-preview img {
@@ -632,7 +704,7 @@ body.theme-luka hr {
   display: block;
   margin: 0.9em 0;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--hairline);
 }
 
 body.theme-luka .site-footer {
@@ -664,6 +736,11 @@ body.theme-luka strong {
 
   body.theme-luka .nav-links {
     font-size: 110%;
+  }
+
+  body.theme-luka .nav-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 
   body.theme-luka .main-layout {

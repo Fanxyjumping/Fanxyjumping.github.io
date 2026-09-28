@@ -13,15 +13,19 @@
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
-  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260912-honors">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; } catch (error) { document.documentElement.dataset.theme = 'light'; }</script>
+  <link rel="stylesheet" href="assets/css/theme-luka.css?v=20260929-theme">
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
     <div class="nav-container">
       <a class="nav-title" href="index.html">Xiaoyu Fan</a>
-      <div class="nav-links fancy" aria-label="Primary navigation">
-        <a class="active" href="index.html">Main</a>
-        <a href="writing/index.html">Writing</a>
+      <div class="nav-actions">
+        <div class="nav-links fancy" aria-label="Primary navigation">
+          <a class="active" href="index.html">Main</a>
+          <a href="writing/index.html">Writing</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span class="theme-moon" aria-hidden="true">☾</span><span class="theme-sun" aria-hidden="true">☼</span></button>
       </div>
     </div>
   </nav>
@@ -35,14 +39,15 @@
           </a>
 
           <h1 class="site-name">Xiaoyu Fan</h1>
-          <p class="site-email">xiaoyuf30@gmail.com</p>
+          <p class="site-email">xiaoyuf30@hust.edu.cn</p>
 
           <div class="social-icons fancy">
-            <a href="mailto:xiaoyuf30@gmail.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a class="email-link" href="mailto:xiaoyuf30@hust.edu.cn" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             <a href="https://github.com/Fanxyjumping" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=IFHWVOkAAAAJ" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
             <a href="https://www.linkedin.com/in/%E6%99%93%E7%85%9C-%E8%8C%83-838828438/" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://x.com/ShayueFan" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <span class="email-copy-status" role="status" aria-live="polite"></span>
           </div>
 
           <div class="visitor-card">
@@ -60,7 +65,7 @@
           <h2 class="section-title">About Me</h2>
           <div class="section-body">
             <p>Hi, I'm <strong>Xiaoyu Fan</strong>, an undergraduate student at Huazhong University of Science and Technology, currently in my third year of Intelligent Medical Engineering.</p>
-            <p>I am currently a research assistant at <a href="https://collegeai.tsinghua.edu.cn/" target="_blank" rel="noopener">CAI</a>, THU, advised by Prof. <a href="https://helloworldlty.github.io/" target="_blank" rel="noopener">Tianyu Liu</a>; and interning at the <a href="https://isi.jhu.edu/" target="_blank" rel="noopener">Information Security Institute</a>, JHU, advised by Prof. <a href="https://xiaocw11.github.io/index.html" target="_blank" rel="noopener">Chaowei Xiao</a>. Previously, I was visiting at the <a href="https://deepdeltalab.github.io/team/" target="_blank" rel="noopener">DeepDelta Lab</a>, SJTU, advised by Prof. <a href="https://shaobo.info/" target="_blank" rel="noopener">Shaobo Cui</a>; and undertook research training with the DeepKW team at the <a href="https://sjic.hust.edu.cn/" target="_blank" rel="noopener">School of Journalism and Information Communication</a>, HUST, advised by Prof. <a href="https://sjic.hust.edu.cn/info/1168/8606.htm" target="_blank" rel="noopener">Ran Wang</a>.</p>
+            <p>I am currently a research assistant at <a href="https://collegeai.tsinghua.edu.cn/" target="_blank" rel="noopener">CAI</a>, THU, advised by Prof. <a href="https://helloworldlty.github.io/" target="_blank" rel="noopener">Tianyu Liu</a>. Previously, I was visiting at the <a href="https://deepdeltalab.github.io/team/" target="_blank" rel="noopener">DeepDelta Lab</a>, SJTU, advised by Prof. <a href="https://shaobo.info/" target="_blank" rel="noopener">Shaobo Cui</a>; and undertook research training with the DeepKW team at the <a href="https://sjic.hust.edu.cn/" target="_blank" rel="noopener">School of Journalism and Information Communication</a>, HUST, advised by Prof. <a href="https://sjic.hust.edu.cn/info/1168/8606.htm" target="_blank" rel="noopener">Ran Wang</a>.</p>
             <p>My research centers on Human-AI Synergy, focusing on communication and co-operation amongst multi-agents, the evaluation of agentic engineering, collaboration between AI &amp; human scientists, and the training &amp; evaluation of foundational models at various stages. I believe in the immense power of high-quality data &amp; scaling, and am passionate about exploring large-scale ML driven by high-quality data.</p>
             <p><strong>Research Interest:</strong> <span class="research-keyword">Multi-agent Systems</span>, <span class="research-keyword">AI4Medicine</span>, and <span class="research-keyword">Representation Learning</span>.</p>
             <div class="opportunity-box">
@@ -95,18 +100,6 @@
                   <p class="exp-title"><strong>Tsinghua University</strong></p>
                   <p class="exp-detail">Research Assistant</p>
                   <p class="exp-detail"><em>Hosts:</em> Prof. <strong><a href="https://helloworldlty.github.io/" target="_blank" rel="noopener">Tianyu Liu</a></strong></p>
-                  <p class="exp-period">Sep. 2026 - Present</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="experience-item">
-                <img src="assets/img/jhu-logo.png" alt="Johns Hopkins University logo" class="institution-logo">
-                <div class="experience-content">
-                  <p class="exp-title"><strong>Johns Hopkins University</strong></p>
-                  <p class="exp-detail">Research Intern</p>
-                  <p class="exp-detail"><em>Hosts:</em> Prof. <strong><a href="https://xiaocw11.github.io/index.html" target="_blank" rel="noopener">Chaowei Xiao</a></strong></p>
                   <p class="exp-period">Sep. 2026 - Present</p>
                 </div>
               </div>
@@ -239,6 +232,7 @@
   </div>
 
   <script src="assets/js/scale.fix.js"></script>
+  <script src="assets/js/theme.js?v=20260929"></script>
   <script>
     (function() {
       const abstractButton = document.querySelector('.abstract-button');

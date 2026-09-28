@@ -9,15 +9,19 @@
   <link rel="icon" href="../../assets/img/favicon.jpg" type="image/jpeg">
 
   <link rel="stylesheet" href="../../assets/css/font_sans_serif.css">
-  <link rel="stylesheet" href="../../assets/css/theme-luka.css">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; } catch (error) { document.documentElement.dataset.theme = 'light'; }</script>
+  <link rel="stylesheet" href="../../assets/css/theme-luka.css?v=20260929-theme">
 </head>
 <body class="theme-luka">
   <nav class="top-nav">
     <div class="nav-container">
       <a class="nav-title" href="../../index.html">Xiaoyu Fan</a>
-      <div class="nav-links fancy" aria-label="Primary navigation">
-        <a href="../../index.html">Main</a>
-        <a class="active" href="../../writing/index.html">Writing</a>
+      <div class="nav-actions">
+        <div class="nav-links fancy" aria-label="Primary navigation">
+          <a href="../../index.html">Main</a>
+          <a class="active" href="../../writing/index.html">Writing</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span class="theme-moon" aria-hidden="true">☾</span><span class="theme-sun" aria-hidden="true">☼</span></button>
       </div>
     </div>
   </nav>
@@ -211,5 +215,6 @@
   </div>
 
   <script src="../../assets/js/scale.fix.js"></script>
+  <script src="../../assets/js/theme.js?v=20260929"></script>
 </body>
 </html>
