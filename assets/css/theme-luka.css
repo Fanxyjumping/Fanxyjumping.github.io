@@ -141,6 +141,9 @@ body.theme-luka .nav-actions {
 body.theme-luka .theme-toggle {
   width: 1.5em;
   height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   border: 0;
   background: transparent;
@@ -149,6 +152,27 @@ body.theme-luka .theme-toggle {
   font-size: 1.2em;
   line-height: 1;
   cursor: pointer;
+}
+
+body.theme-luka .theme-moon {
+  position: relative;
+  display: block;
+  width: 0.9em;
+  height: 0.9em;
+  overflow: hidden;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+body.theme-luka .theme-moon::after {
+  content: "";
+  position: absolute;
+  top: -0.2em;
+  left: 0.35em;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  background: var(--nav-bg);
 }
 
 body.theme-luka .theme-toggle:hover {
