@@ -368,6 +368,11 @@ body.theme-luka .opportunity-box strong {
   color: #b06b50;
 }
 
+body.theme-luka .opportunity-message {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 body.theme-luka .research-keyword {
   text-decoration-line: underline;
   text-decoration-color: var(--text);
